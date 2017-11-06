@@ -1,0 +1,363 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string degreeType = ViewData["degreeType"] as string;
+}
+
+@using Capstone.Web.Models;
+@model List<ParkWeather>
+<body>
+    <div>
+        <h2 class="subheader" id="parkDetailHeader">@Model[0].ParkName Details</h2>
+        <div class="row">
+            <div class="col-lg-12" id="topContent">
+                @{string imgPath = "/Content/img/parks/" + Model[0].ParkCode.ToString().ToLower() + ".jpg"; }
+                <div class="pull-left">
+                    <img class="parkdetail" id="parkdetailimage" src="@imgPath" />  
+                </div>
+                <div class="pull-left">
+                    <div class="row" id="stateinfo">
+                        <div class="col-md-2">
+                            <p class="parkinfotitle">
+                                State
+                            </p>
+                        </div>
+                        <div class="col-md-10">
+                            <p class="parkinfocontain">
+                                @Model[0].State
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row" id="acreageinfo">
+                        <div class="col-md-2">
+                            <p class="parkinfotitle">
+                                Acreage
+                            </p>
+                        </div>
+                        <div class="col-md-10">
+                            <p class="parkinfocontain">
+                                @Model[0].Acreage
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="row" id="elevationinfo">
+                        <div class="col-md-2">
+                            <p class="parkinfotitle">
+                                Elevation in Feet
+                            </p>
+                        </div>
+                        <div class="col-md-10">
+                            <p class="parkinfocontain">
+                                @Model[0].ElevationInFeet
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="row" id="milesinfo">
+                        <div class="col-md-2">
+                            <p class="parkinfotitle">
+                                Miles of Trail
+                            </p>
+                        </div>
+                        <div class="col-md-10">
+                            <p class="parkinfocontain">
+                                @Model[0].MilesOfTrail
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="row" id="campsiteinfo">
+                        <div class="col-md-2">
+                            <p class="parkinfotitle">
+                                Number of Campsites
+                            </p>
+                        </div>
+                        <div class="col-md-10">
+                            <p class="parkinfocontain">
+                                @Model[0].NumberOfCampsites
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row" id="climateinfo">
+                        <div class="col-md-2">
+                            <p class="parkinfotitle">
+                                Climate
+                            </p>
+                        </div>
+                        <div class="col-md-10">
+                            <p class="parkinfocontain">
+                                @Model[0].Climate
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row" id="yearfoundedinfo">
+                        <div class="col-md-2">
+                            <p class="parkinfotitle">
+                                Year Founded
+                            </p>
+                        </div>
+                        <div class="col-md-10">
+                            <p class="parkinfocontain">
+                                @Model[0].YearFounded
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row" id="annaulVisitorCountinfo">
+                        <div class="col-md-2">
+                            <p class="parkinfotitle">
+                                Annual Visitor Count
+                            </p>
+                        </div>
+                        <div class="col-md-10">
+                            <p class="parkinfocontain">
+                                @Model[0].AnnualVisitorCount
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row" id="inspirationalQuoteinfo">
+                        <div class="col-md-2">
+                            <p class="parkinfotitle">
+                                Inspirational Quote
+                            </p>
+                        </div>
+                        <div class="col-md-10">
+                            <p class="parkinfocontain">
+                                @Model[0].InspirationalQuote
+                                - @Model[0].InspirationalQuoteSource
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row" id="parkdescriptioninfo">
+                        <div class="col-md-2">
+                            <p class="parkinfotitle">
+                                Description
+                            </p>
+                        </div>
+                        <div class="col-md-10">
+                            <p class="parkinfocontain">
+                                @Model[0].ParkDescription
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row" id="entryfeeinfo">
+                        <div class="col-md-2">
+                            <p class="parkinfotitle">
+                                Entry Fee
+                            </p>
+                        </div>
+                        <div class="col-md-10">
+                            <p class="parkinfocontain">
+                                @Model[0].EntryFee
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row" id="numberofanimalspeciesinfo">
+                        <div class="col-md-2">
+                            <p class="parkinfotitle">
+                                Number of Animal Species
+                            </p>
+                        </div>
+                        <div class="col-md-10">
+                            <p class="parkinfocontain">
+                                @Model[0].NumberOfAnimalSpecies
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12" id="weathertable">
+                <div class="row" id="weatherimages">
+                    @foreach (ParkWeather element in Model)
+                    {
+                        string weatherImagePath = "";
+                        if (element.Forecast == "partly cloudy")
+                        {
+                            weatherImagePath = "/Content/img/weather/partlyCloudy.png";
+                        }
+                        else
+                        {
+                            weatherImagePath = "/Content/img/weather/" + element.Forecast + ".png";
+                        }
+
+                        <div class="col-lg-2">
+                            <img class="weatherimage" src="@weatherImagePath" />
+                        </div>
+                    }
+                </div>
+
+                @if (degreeType == "F")
+            {
+                    <div class="row" id="Temp">
+                        @foreach (ParkWeather element in Model)
+                        {
+                            <div class="col-lg-2">
+                                <p class="highTempNumber">
+                                    High: @element.High @degreeType
+                                </p>
+                                <p class="lowTempNumber">
+                                    Low: @element.Low @degreeType
+                                </p>
+                            </div>
+                        }
+                    </div>
+                }
+
+                else if (degreeType == "C")
+                {
+                    <div class="row" id="Temp">
+                        @foreach (ParkWeather element in Model)
+                        {
+                            <div class="col-lg-2">
+                                <p class="highTempNumber">
+                                    @{int tempInCHigh = (int)((0.556) * (element.High - 32)); }
+                                    High: @tempInCHigh @degreeType
+                                </p>
+                                <p class="lowTempNumber">
+                                    @{int tempInCLow = (int)((0.556) * (element.Low - 32)); }
+                                    High: @tempInCLow @degreeType
+                                </p>
+                            </div>
+                                        }
+                    </div>
+                                        }
+
+                <div class="row" id="weatherMessage">
+
+                    @foreach (ParkWeather element in Model)
+                    {
+                        <div class="col-lg-2">
+                            @if (element.Forecast == "snow")
+                            {
+                                <p class="weatherMessage">
+                                    Pack Snow Shoes
+                                </p>
+                                if (element.High < 20 || element.Low < 20)
+                                {
+                                    <p class="weatherMessage">
+                                        Beware of exposer to fridged tempatures
+                                    </p>
+                                }
+                                if (element.High - element.Low > 20)
+                                {
+                                    <p class="weatherMessage">
+                                        Wear breathable layers
+                                    </p>
+                                }
+                            }
+                            else if (element.Forecast == "sunny")
+                            {
+                                <p class="weatherMessage">
+                                    Pack sunblock
+                                </p>
+                                if (element.High < 20 || element.Low < 20)
+                                {
+                                    <p class="weatherMessage">
+                                        Beware of exposer to fridged tempatures
+                                    </p>
+                                }
+                                if (element.High > 75 || element.Low > 75)
+                                {
+                                    <p class="weatherMessage">
+                                        Bring an extra gallon of water
+                                    </p>
+                                }
+                                if (element.High - element.Low > 20)
+                                {
+                                    <p class="weatherMessage">
+                                        Wear breathable layers
+                                    </p>
+                                }
+                            }
+                            else if (element.Forecast == "rain")
+                            {
+                                <p class="weatherMessage">
+                                    Pack rain gear and wear waterproof shoes
+                                </p>
+                                if (element.High < 20 || element.Low < 20)
+                                {
+                                    <p class="weatherMessage">
+                                        Beware of exposer to fridged tempatures
+                                    </p>
+                                }
+                                if (element.High > 75 || element.Low > 75)
+                                {
+                                    <p class="weatherMessage">
+                                        Bring an extra gallon of water
+                                    </p>
+                                }
+                                if (element.High - element.Low > 20)
+                                {
+                                    <p class="weatherMessage">
+                                        Wear breathable layers
+                                    </p>
+                                }
+                            }
+                            else if (element.Forecast == "thunderstorms")
+                            {
+                                <p class="weatherMessage">
+                                    Seek shelter and avoid hiking on exposed ridges
+                                </p>
+                                if (element.High < 20 || element.Low < 20)
+                                {
+                                    <p class="weatherMessage">
+                                        Beware of exposer to fridged tempatures
+                                    </p>
+                                }
+                                if (element.High > 75 || element.Low > 75)
+                                {
+                                    <p class="weatherMessage">
+                                        Bring an extra gallon of water
+                                    </p>
+                                }
+                                if (element.High - element.Low > 20)
+                                {
+                                    <p class="weatherMessage">
+                                        Wear breathable layers
+                                    </p>
+                                }
+                            }
+                            else if (element.Forecast == "partly cloudy" || element.Forecast == "cloudy")
+                            {
+                                if (element.High < 20 || element.Low < 20)
+                                {
+                                    <p class="weatherMessage">
+                                        Beware of exposer to fridged tempatures
+                                    </p>
+                                }
+                                if (element.High > 75 || element.Low > 75)
+                                {
+                                    <p class="weatherMessage">
+                                        Bring an extra gallon of water
+                                    </p>
+                                }
+                                if (element.High - element.Low > 20)
+                                {
+                                    <p class="weatherMessage">
+                                        Wear breathable layers
+                                    </p>
+                                }
+                            }
+                        </div>
+                    }
+                </div>
+                <div class="col-lg-1" id="degreelink">
+                    @Html.ActionLink("Degree F", "ParkDetail", "Home", new { id = Model[0].ParkCode, degreeType = "F" }, null)
+                    @Html.ActionLink("Degree C", "ParkDetail", "Home", new { id = Model[0].ParkCode, degreeType = "C" }, null)
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

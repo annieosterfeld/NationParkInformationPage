@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Capstone.Web.Models
+@model List<Survey>
+
+
+<h2>Most Popular Park Choices:</h2>
+
+<table>
+    <tr>
+        <td style="padding-right: 15px">Votes</td>
+        <td style="padding-right: 15px">Park Code</td>
+        <td style="padding-right: 15px">Park Name</td>
+    </tr>
+    @{ int rowIdCount = 0;}
+    @foreach (Survey survey in Model)
+    {
+        if (survey.SurveyId % 2 == 0)
+        {
+            <tr id="@survey.ParkCode">
+                <div class="evenRow">
+                    <td>@survey.Votes</td>
+                    <td>@survey.ParkCode</td>
+                    <td>@survey.ParkName</td>
+                </div>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <div class="oddRow">
+                    <td>@survey.Votes</td>
+                    <td>@survey.ParkCode</td>
+                    <td>@survey.ParkName</td>
+                </div>
+            </tr>
+        }
+    }
+</table>
+
+

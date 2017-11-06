@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Capstone.Web.Models;
+@model List<ParkWeather>
+
+
+@for (int i = 0; i < Model.Count; i++)
+{
+    if (Model[i].FiveDayForcastValue == 1)
+    {
+        string imgPath = "/Content/img/parks/" + Model[i].ParkCode.ToString().ToLower() + ".jpg";
+        <div class="row" id="homePageRow@{i.ToString();}">
+            <div class="col-lg-3">
+                <a href="@Url.Action("ParkDetail","Home",new { id = Model[i].ParkCode})">
+                    <img class="homePageImg" id" src="@imgPath" />
+                </a>
+            </div>
+            <div class="col-lg-8">
+                <a href="@Url.Action("ParkDetail","Home",new { id = Model[i].ParkCode})">
+                    <h3 class="homePageParkName" id="homePageParkName@{i.ToString();}">
+                        @Model[i].ParkName
+                    </h3>
+                </a>
+                <h3 class="homePageLocation" id="homePageLocation@{i.ToString();}">
+                    @Model[i].State
+                </h3>
+                <p class="homePageDescription" id="homePageDescription@{i.ToString();}">
+                    @Model[i].ParkDescription
+                </p>
+            </div>
+        </div>
+        }
+    }

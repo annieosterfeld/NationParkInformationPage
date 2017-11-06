@@ -1,0 +1,9 @@
+C:\Users\aosterfeld\annieosterfeld-c-exercises\team3-c-week9-pair-exercises\m3-w9d3-csharp-capstone\Capstone.Testing\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\aosterfeld\annieosterfeld-c-exercises\team3-c-week9-pair-exercises\m3-w9d3-csharp-capstone\Capstone.Testing\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\aosterfeld\annieosterfeld-c-exercises\team3-c-week9-pair-exercises\m3-w9d3-csharp-capstone\Capstone.Testing\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\aosterfeld\annieosterfeld-c-exercises\team3-c-week9-pair-exercises\m3-w9d3-csharp-capstone\Capstone.Testing\bin\Debug\netcoreapp1.1\Capstone.Testing.deps.json
+C:\Users\aosterfeld\annieosterfeld-c-exercises\team3-c-week9-pair-exercises\m3-w9d3-csharp-capstone\Capstone.Testing\bin\Debug\netcoreapp1.1\Capstone.Testing.runtimeconfig.json
+C:\Users\aosterfeld\annieosterfeld-c-exercises\team3-c-week9-pair-exercises\m3-w9d3-csharp-capstone\Capstone.Testing\bin\Debug\netcoreapp1.1\Capstone.Testing.runtimeconfig.dev.json
+C:\Users\aosterfeld\annieosterfeld-c-exercises\team3-c-week9-pair-exercises\m3-w9d3-csharp-capstone\Capstone.Testing\bin\Debug\netcoreapp1.1\Capstone.Testing.dll
+C:\Users\aosterfeld\annieosterfeld-c-exercises\team3-c-week9-pair-exercises\m3-w9d3-csharp-capstone\Capstone.Testing\obj\Debug\netcoreapp1.1\Capstone.Testing.csprojResolveAssemblyReference.cache
+C:\Users\aosterfeld\annieosterfeld-c-exercises\team3-c-week9-pair-exercises\m3-w9d3-csharp-capstone\Capstone.Testing\obj\Debug\netcoreapp1.1\Capstone.Testing.AssemblyInfo.cs
